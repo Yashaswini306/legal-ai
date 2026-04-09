@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LegalShield AI – Your AI Legal Advocate</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NOISE OVERLAY -->
+<div class="noise-overlay"></div>
+
+<!-- AMBIENT ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="orb orb-4"></div>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      <span class="logo-icon">⚖️</span>
+      <span class="logo-text">LegalShield <span class="logo-ai">AI</span></span>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link active" onclick="showPage('home')" id="navlink-home">Home</a>
+      <a class="nav-link" onclick="showPage('analyze')" id="navlink-analyze">Analyze</a>
+      <a class="nav-link" onclick="showPage('chat')" id="navlink-chat">Ask AI</a>
+      <a class="nav-link" onclick="showPage('about')" id="navlink-about">About</a>
+    </div>
+    <button class="nav-cta" onclick="showPage('analyze')">Get Started →</button>
+    <button class="hamburger" onclick="toggleMobileMenu()" id="hamburger">☰</button>
+  </div>
+  <div class="mobile-menu hidden" id="mobileMenu">
+    <a onclick="showPage('home');toggleMobileMenu()">Home</a>
+    <a onclick="showPage('analyze');toggleMobileMenu()">Analyze</a>
+    <a onclick="showPage('chat');toggleMobileMenu()">Ask AI</a>
+    <a onclick="showPage('about');toggleMobileMenu()">About</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      AI-Powered Legal Intelligence
+    </div>
+    <h1 class="hero-title">
+      Access to Justice<br/>
+      <span class="gradient-text">for Everyone</span>
+    </h1>
+    <p class="hero-subtitle">
+      Upload any legal document and instantly understand your rights, risks, and obligations —
+      explained in plain English by your personal AI legal advocate.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="showPage('analyze')">
+        <span>📄</span> Analyze Document
+      </button>
+      <button class="btn-secondary" onclick="showPage('chat')">
+        <span>💬</span> Ask AI Counsel
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">50K+</div>
+        <div class="stat-label">Docs Analyzed</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Accuracy Rate</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">&lt;10s</div>
+        <div class="stat-label">Analysis Time</div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">scroll to explore ↓</div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="section features-section">
+    <div class="section-label">What we do</div>
+    <h2 class="section-title">Legal clarity in seconds</h2>
+    <div class="features-grid">
+      <div class="feature-card" style="--delay:0s">
+        <div class="feature-icon-wrap blue-glow">🔍</div>
+        <h3>Smart Document Scan</h3>
+        <p>Instant detection of document type, key clauses, and hidden obligations buried in fine print.</p>
+      </div>
+      <div class="feature-card" style="--delay:.1s">
+        <div class="feature-icon-wrap red-glow">⚠️</div>
+        <h3>Risk Intelligence</h3>
+        <p>Visual risk meter scores every clause. Red flags surface immediately so nothing catches you off guard.</p>
+      </div>
+      <div class="feature-card" style="--delay:.2s">
+        <div class="feature-icon-wrap purple-glow">💬</div>
+        <h3>Plain English AI</h3>
+        <p>Complex legalese translated instantly. Understand exactly what you're agreeing to, no law degree needed.</p>
+      </div>
+      <div class="feature-card" style="--delay:.3s">
+        <div class="feature-icon-wrap green-glow">🛡️</div>
+        <h3>Contextual Advice</h3>
+        <p>Actionable recommendations tailored to your specific document, jurisdiction, and situation.</p>
+      </div>
+      <div class="feature-card" style="--delay:.4s">
+        <div class="feature-icon-wrap amber-glow">⚡</div>
+        <h3>Instant Chat</h3>
+        <p>Ask follow-up questions after analysis. Your AI advocate remembers everything about your document.</p>
+      </div>
+      <div class="feature-card" style="--delay:.5s">
+        <div class="feature-icon-wrap cyan-glow">🔐</div>
+        <h3>Private & Secure</h3>
+        <p>No data stored. Everything runs in your browser. Your documents never leave your device.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section how-section">
+    <div class="section-label">Process</div>
+    <h2 class="section-title">Three steps to clarity</h2>
+    <div class="steps-row">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon">📤</div>
+        <h3>Upload or Paste</h3>
+        <p>Drag & drop your document or paste the legal text directly into the analyzer.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon">🧠</div>
+        <h3>AI Analyzes</h3>
+        <p>Our Claude-powered AI reads every clause, detects risks, and maps your obligations.</p>
+      </div>
+      <div class="step-connector">→</div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon">✅</div>
+        <h3>Understand & Act</h3>
+        <p>Get a full breakdown in plain English with a risk score and specific advice to protect yourself.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO BANNER -->
+  <section class="section demo-banner">
+    <div class="demo-banner-inner">
+      <div class="demo-text">
+        <h2>Try it right now — no signup required</h2>
+        <p>Load a sample contract and see LegalShield AI in action in under 10 seconds.</p>
+      </div>
+      <div class="demo-actions">
+        <button class="btn-primary" onclick="loadDemoAndAnalyze()">⚡ Load Demo Document</button>
+        <button class="btn-ghost" onclick="showPage('analyze')">Upload Your Own →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">⚖️ LegalShield AI</div>
+    <p class="footer-note">For informational purposes only. Not a substitute for professional legal advice.</p>
+    <p class="footer-copy">© 2025 LegalShield AI. Built for the people.</p>
+  </footer>
+
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: ANALYZE
+══════════════════════════════════ -->
+<div id="page-analyze" class="page">
+  <div class="page-container">
+
+    <div class="page-header">
+      <div class="page-header-text">
+        <div class="section-label">Document Intelligence</div>
+        <h1 class="page-title">Analyze Your Document</h1>
+        <p class="page-subtitle">Upload or paste any legal text to get an instant AI-powered breakdown.</p>
+      </div>
+      <button class="btn-ghost-sm" onclick="loadDemoAndAnalyze()">⚡ Load Demo</button>
+    </div>
+
+    <!-- INPUT AREA -->
+    <div class="analyzer-grid" id="analyzerInput">
+      <!-- DROP ZONE -->
+      <div class="glass-card dropzone-card" id="dropzone"
+           ondragover="handleDragOver(event)"
+           ondragleave="handleDragLeave(event)"
+           ondrop="handleDrop(event)"
+           onclick="document.getElementById('fileInput').click()">
+        <input type="file" id="fileInput" accept=".txt,.pdf,.doc,.docx" style="display:none" onchange="handleFileSelect(event)" />
+        <div class="dz-content" id="dzContent">
+          <div class="dz-icon-wrap">
+            <span class="dz-icon">☁️</span>
+            <div class="dz-ripple"></div>
+          </div>
+          <h3 class="dz-title">Drop your document here</h3>
+          <p class="dz-sub">PDF, DOC, or TXT — or click to browse</p>
+          <div class="dz-formats">
+            <span>PDF</span><span>DOCX</span><span>TXT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASTE AREA -->
+      <div class="glass-card paste-card">
+        <div class="paste-header">
+          <label class="paste-label">Or paste legal text</label>
+          <span class="char-count" id="charCount">0 / 4000 chars</span>
+        </div>
+        <textarea id="legalTextInput"
+                  placeholder="Paste your contract, agreement, terms of service, rental agreement, employment contract, NDA, or any legal text here..."
+                  oninput="onTextInput(this)"></textarea>
+        <div class="paste-footer">
+          <div class="voice-btn-wrap">
+            <button class="voice-btn" id="voiceBtn" onclick="toggleVoice()" title="Voice input">🎙️ Voice</button>
+            <span class="voice-status" id="voiceStatus"></span>
+          </div>
+          <button class="btn-primary" id="analyzeBtn" onclick="runAnalysis()">
+            <span id="analyzeBtnText">⚡ Analyze Now</span>
+            <div class="btn-spinner hidden" id="analyzeBtnSpinner"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-wrap hidden" id="skeletonLoader">
+      <div class="skeleton-card">
+        <div class="skel skel-title"></div>
+        <div class="skel skel-line w80"></div>
+        <div class="skel skel-line w60"></div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skel skel-title w40"></div>
+        <div class="skel-grid">
+          <div class="skel skel-block"></div>
+          <div class="skel skel-block"></div>
+          <div class="skel skel-block"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skel skel-title w50"></div>
+        <div class="skel skel-line"></div>
+        <div class="skel skel-line w70"></div>
+        <div class="skel skel-line w90"></div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-section hidden" id="resultsSection">
+
+      <!-- RISK METER + VERDICT -->
+      <div class="results-header-row">
+        <div class="glass-card verdict-card" id="verdictCard">
+          <div class="verdict-left">
+            <div class="verdict-type-label">Document Type</div>
+            <div class="verdict-type" id="resultDocType">—</div>
+            <div class="verdict-badge-wrap">
+              <div class="verdict-badge" id="verdictBadge">—</div>
+            </div>
+          </div>
+          <div class="verdict-right">
+            <div class="risk-meter-label">Risk Score</div>
+            <div class="risk-meter-wrap">
+              <svg class="risk-meter-svg" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="meterGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#22d3ee"/>
+                    <stop offset="40%" style="stop-color:#fbbf24"/>
+                    <stop offset="100%" style="stop-color:#f87171"/>
+                  </linearGradient>
+                </defs>
+                <path d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="10" stroke-linecap="round"/>
+                <path id="meterArc" d="M10 65 A50 50 0 0 1 110 65" fill="none" stroke="url(#meterGrad)" stroke-width="10" stroke-linecap="round" stroke-dasharray="157" stroke-dashoffset="157"/>
+                <text id="meterScore" x="60" y="62" text-anchor="middle" fill="#f0f4ff" font-size="18" font-weight="700" font-family="Cabinet Grotesk">0</text>
+              </svg>
+            </div>
+            <div class="risk-meter-scale">
+              <span style="color:#22d3ee">Safe</span>
+              <span style="color:#fbbf24">Caution</span>
+              <span style="color:#f87171">Risky</span>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card summary-card">
+          <div class="card-header"><span class="card-icon blue">📋</span><h3>Plain English Summary</h3></div>
+          <p class="summary-text" id="resultSummary">—</p>
+          <button class="ask-ai-btn" onclick="showPage('chat')">💬 Ask AI about this →</button>
+        </div>
+      </div>
+
+      <!-- TABS -->
+      <div class="results-tabs">
+        <button class="tab-btn active" onclick="switchTab('clauses', this)">Key Clauses</button>
+        <button class="tab-btn" onclick="switchTab('risks', this)">⚠️ Risks</button>
+        <button class="tab-btn" onclick="switchTab('obligations', this)">Obligations</button>
+        <button class="tab-btn" onclick="switchTab('advice', this)">💡 Advice</button>
+      </div>
+
+      <div class="tab-content active" id="tab-clauses"></div>
+      <div class="tab-content" id="tab-risks"></div>
+      <div class="tab-content" id="tab-obligations"></div>
+      <div class="tab-content" id="tab-advice"></div>
+
+      <!-- ACTION ROW -->
+      <div class="results-action-row">
+        <button class="btn-ghost" onclick="resetAnalyzer()">↩ Analyze Another</button>
+        <button class="btn-primary" onclick="showPage('chat')">💬 Continue in AI Chat →</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: CHAT
+══════════════════════════════════ -->
+<div id="page-chat" class="page">
+  <div class="chat-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="chat-sidebar">
+      <div class="sidebar-header">
+        <h3>AI Counsel</h3>
+        <div class="ai-status"><div class="status-dot"></div>Active</div>
+      </div>
+      <div class="sidebar-context" id="sidebarContext">
+        <div class="context-empty">
+          <span>📁</span>
+          <p>No document loaded</p>
+          <button class="btn-ghost-xs" onclick="showPage('analyze')">Analyze a doc first</button>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-label">Quick questions</div>
+        <div class="quick-q-list" id="quickQuestions">
+          <div class="quick-q" onclick="sendQuickQ(this)">What are my rights as a tenant?</div>
+          <div class="quick-q" onclick="sendQuickQ(this)">Explain non-compete clauses</div>
+          <div class="quick-q" onclick="sendQuickQ(this)">What is arbitration?</div>
+          <div class="quick-q" onclick="sendQuickQ(this)">Can I break this contract?</div>
+          <div class="quick-q" onclick="sendQuickQ(this)">What are penalty clauses?</div>
+          <div class="quick-q" onclick="sendQuickQ(this)">What is force majeure?</div>
+        </div>
+      </div>
+      <button class="sidebar-clear-btn" onclick="clearChat()">🗑 Clear chat</button>
+    </aside>
+
+    <!-- MAIN CHAT -->
+    <div class="chat-main">
+      <div class="chat-header">
+        <div class="chat-header-left">
+          <div class="chat-avatar">⚖️</div>
+          <div>
+            <div class="chat-name">LegalShield AI</div>
+            <div class="chat-subtitle">Powered by Claude · Context-aware</div>
+          </div>
+        </div>
+        <div class="chat-header-right">
+          <div class="context-badge" id="contextBadge">No document context</div>
+        </div>
+      </div>
+
+      <div class="messages-wrap" id="messagesWrap">
+        <div class="messages" id="messages">
+          <div class="message-row ai">
+            <div class="msg-avatar">⚖️</div>
+            <div class="msg-bubble ai">
+              <p>Hello! I'm your AI Legal Counsel, powered by Claude.</p>
+              <p style="margin-top:8px">I can help you understand legal documents, explain legal terms in plain English, identify risks in contracts, and answer general legal questions.</p>
+              <p style="margin-top:8px">You can also <strong>analyze a document first</strong> (in the Analyze tab) and I'll be fully context-aware about your specific contract. How can I help you today?</p>
+              <div class="msg-time">Just now</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUGGESTIONS -->
+      <div class="suggestions-bar" id="suggestionsBar">
+        <div class="suggestion-chip" onclick="useSuggestion(this)">What risks should I watch for?</div>
+        <div class="suggestion-chip" onclick="useSuggestion(this)">Summarize my obligations</div>
+        <div class="suggestion-chip" onclick="useSuggestion(this)">Is this agreement fair?</div>
+        <div class="suggestion-chip" onclick="useSuggestion(this)">What can I negotiate?</div>
+      </div>
+
+      <!-- INPUT -->
+      <div class="chat-input-area">
+        <div class="chat-input-wrap">
+          <textarea id="chatInput"
+                    placeholder="Ask anything about your document or any legal question..."
+                    rows="1"
+                    onkeydown="handleChatKey(event)"
+                    oninput="autoResize(this)"></textarea>
+          <div class="chat-input-actions">
+            <button class="chat-voice-btn" onclick="toggleChatVoice()" title="Voice input">🎙️</button>
+            <button class="chat-send-btn" id="chatSendBtn" onclick="sendChatMessage()">
+              <span id="sendBtnIcon">➤</span>
+              <div class="btn-spinner hidden" id="chatSpinner"></div>
+            </button>
+          </div>
+        </div>
+        <div class="chat-input-hint">Press Enter to send · Shift+Enter for new line</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     PAGE: ABOUT
+══════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="page-container about-page">
+    <div class="section-label">About</div>
+    <h1 class="page-title">Built for the people, not law firms</h1>
+    <p class="page-subtitle" style="max-width:600px">LegalShield AI democratizes legal understanding. Every person deserves to know what they're signing.</p>
+    <div class="about-cards">
+      <div class="glass-card about-card">
+        <h3>🎯 Our Mission</h3>
+        <p>Legal documents are intentionally complex. We use AI to level the playing field — giving everyone the same understanding of their rights that was previously only available to those who could afford lawyers.</p>
+      </div>
+      <div class="glass-card about-card">
+        <h3>🔒 Privacy First</h3>
+        <p>Your documents are never stored or shared. All analysis happens in real time and is discarded immediately. We don't log, track, or sell your data.</p>
+      </div>
+      <div class="glass-card about-card">
+        <h3>⚖️ Disclaimer</h3>
+        <p>LegalShield AI provides informational analysis only. It is not a substitute for professional legal advice. Always consult a qualified lawyer for important legal matters.</p>
+      </div>
+      <div class="glass-card about-card">
+        <h3>🧠 Technology</h3>
+        <p>Powered by Anthropic's Claude — one of the most capable AI models for nuanced reasoning and language understanding, specifically tuned for legal comprehension.</p>
+      </div>
+    </div>
+    <div class="about-cta">
+      <button class="btn-primary" onclick="showPage('analyze')">📄 Try it now →</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
